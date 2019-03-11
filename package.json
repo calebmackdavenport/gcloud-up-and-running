@@ -1,0 +1,15 @@
+{
+  "name": "the-next-big-thing",
+  "version": "1.0.0",
+  "description": "The next big thing in technology. #NDA #SlicedBread #StepAsideGoogle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CMD & Associates",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "process": "^0.11.10"
+  }
+}
