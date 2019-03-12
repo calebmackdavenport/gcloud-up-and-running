@@ -1,1 +1,1 @@
-# We're out here building the next big thing
+# Helping you build the next big thing
