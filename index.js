@@ -54,13 +54,13 @@ async function getSpreadsheet() {
     'return-empty': true,
   })
 
-  for (var x = 0; x < cells.length; x++) {
-    if (!cells[x].value) {
-      cells[x].value = "Now I'm writing";
-      break
-    }
-  }
-  await sheet.bulkUpdateCells(cells);
+  // for (var x = 0; x < cells.length; x++) {
+  //   if (!cells[x].value) {
+  //     cells[x].value = "Now I'm writing";
+  //     break
+  //   }
+  // }
+  // await sheet.bulkUpdateCells(cells);
 
   var response = ""
   for (var x = 0; x < cells.length; x++) {
