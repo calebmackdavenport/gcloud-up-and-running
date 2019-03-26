@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Google Maps</title>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+
+<style>
+#map {
+    height: 700px;
+    width: 100%;
+}
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=your-api-key-here"></script>
+<script>
+var center = { lat: 33.5190306, lng: -86.7937145 };
+var map = new google.maps.Map(document.getElementById('map'), { zoom: 15, center: center });
+
+
+function addMarker(markers) {
+
+    var marker = new google.maps.Marker({
+        position: markers.coordinate,
+        map: map,
+        label: markers.number,
+        animation: google.maps.Animation.DROP,
+        icon: markers.icon
+    })
+    var infowindow = new google.maps.InfoWindow({ content: markers.infowindow })
+    marker.addListener('click', function () { infowindow.open(map, marker) })
+}
+
+addMarker({
+    coordinate: { lat: 33.5190306, lng: -86.7937145 },
+    infowindow: '<div id="content">' +
+                    '<h4 class="font-weight-light">' +
+                        '<span class="custom-color"></span>' +
+                        '<a href="https://www.google.com/maps/place/Sloss+Furnaces+National+Historic+Landmark/@33.5192551,-86.79517,17z/">Sloss Furnace</a>' + 
+                    '</h4>' +
+                    '<div class="map-info-content">' +
+                    '</div>' +
+                '</div>',
+});
+
+</script>
+
+</html>
