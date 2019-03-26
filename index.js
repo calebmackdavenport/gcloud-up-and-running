@@ -19,7 +19,7 @@ app.get('/robots.txt', (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.status(200).send("Up and running")
+  res.status(200).send("Up and running1")
 });
 
 app.get("/sheets", (req, res) => {
