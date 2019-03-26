@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload Image</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <input id="image" name="file" type="file" onchange=""><br>
+        </div>
+        <img id="preview" src="" style="
+            display: block; 
+            max-height: 50vh; 
+            max-width: 50vh; 
+            width: auto; 
+            height: auto;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            box-shadow: 2.5px 2.5px 4px rgba(0,0,0,.5);
+            -moz-box-shadow: 2.5px 2.5px 4px rgba(0,0,0,.5);
+            -webkit-box-shadow: 2.5px 2.5px 4px rgba(0,0,0,.5);
+        ">
+        <br>
+        <div id="submitbutton" align="left">
+            <input class="finishbutton" type='submit' value='Upload' />
+            <button class="finishbutton" type="button" value="Reset" onclick="location.reload();">Cancel</button>
+        </div>
+        </div>
+        </div>
+    </form>
+</body>
+
+<script>
+    document.getElementById("image").onchange = function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("preview").src = e.target.result;
+        };
+        reader.readAsDataURL(this.files[0]);
+    };
+</script>
+
+</html>
